@@ -17,23 +17,22 @@ export default StyleSheet.create({
   },
   circleTopLeft: {
     position: "absolute",
-    top: -160,
-    left: -160,
-    width: 300,
-    height: 300,
-    borderRadius: 500,
-    backgroundColor: "#FFC857", // Golden Mustard
+    top: -250,
+    left: -250,
+    width: 400,
+    height: 400,
+    borderRadius: 200,
+    backgroundColor: "#FFC857",
   },
   circleBottomRight: {
     position: "absolute",
-    bottom: -50,
-    right: -90,
-    width: 200,
-    height: 200,
-    borderRadius: 100,
-    backgroundColor: "#F28322", // Rich Orange
+    bottom: -150,
+    right: -150,
+    width: 300,
+    height: 300,
+    borderRadius: 150,
+    backgroundColor: "#F28322",
   },
-
   title1: {
     fontSize: 36,
     fontWeight: "bold",
@@ -43,7 +42,7 @@ export default StyleSheet.create({
   },
 
   title: {
-    fontSize: 65,
+    fontSize: 60,
     fontWeight: "bold",
     color: "#6E3C25",
     marginBottom: 100,
@@ -58,7 +57,7 @@ export default StyleSheet.create({
   slogan: {
     fontSize: 24,
     color: "#2D2D2D", // Charcoal Gray
-    marginTop: 15,
+    marginTop: 10,
     textAlign: "center",
   },
 

@@ -1,8 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import { View, Text, TouchableOpacity, Animated, Easing } from "react-native";
-import styles from "../styles/LoginScreenStyles";
+import { useNavigation } from "@react-navigation/native";
+import styles from "../styles/WelcomeScreenStyles.js";
 
-export default function LoginScreen() {
+export default function WelcomeScreen() {
+  const navigation = useNavigation();
+
   const titleAnim = useRef(new Animated.Value(0)).current;
   const sloganAnim = useRef(new Animated.Value(0)).current;
   const buttonAnim = useRef(new Animated.Value(0)).current;
@@ -12,7 +15,6 @@ export default function LoginScreen() {
   const pulseBottomRight = useRef(new Animated.Value(1)).current;
 
   useEffect(() => {
-    // Animate text elements
     Animated.sequence([
       Animated.delay(300),
       Animated.timing(titleAnim, {
@@ -41,18 +43,17 @@ export default function LoginScreen() {
       }),
     ]).start();
 
-    // Pulse animation for the circles
     const pulse = (anim) => {
       Animated.sequence([
         Animated.timing(anim, {
-          toValue: 1.15, // slightly larger scale for more visible pulse
-          duration: 400, // longer scale-up time
+          toValue: 1.15,
+          duration: 400,
           easing: Easing.out(Easing.ease),
           useNativeDriver: true,
         }),
         Animated.timing(anim, {
           toValue: 1,
-          duration: 800, // longer scale-down time
+          duration: 800,
           easing: Easing.in(Easing.ease),
           useNativeDriver: true,
         }),
@@ -116,7 +117,12 @@ export default function LoginScreen() {
           <View style={styles.signupContainer}>
             <Text style={styles.signupText}>
               Don’t have an account?{" "}
-              <Text style={styles.signupLink}>Sign up</Text>
+              <Text
+                style={styles.signupLink}
+                onPress={() => navigation.navigate("Signup")}
+              >
+                Sign up
+              </Text>
             </Text>
           </View>
         </Animated.View>
