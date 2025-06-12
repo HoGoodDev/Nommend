@@ -43,7 +43,7 @@ export default StyleSheet.create({
   },
   input: {
     borderWidth: 0,
-    borderRadius: 16,
+    borderRadius: 25,
     padding: 16,
     marginBottom: 20,
     fontSize: 17,
