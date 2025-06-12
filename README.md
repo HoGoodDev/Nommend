@@ -14,11 +14,11 @@ Currently in early development. The Welcome and Sign-Up screens are built — mo
 
 ## Planned Features
 
-* Location-based restaurant discovery
-* Filter by cuisine (e.g., sushi, burgers, vegan)
-* Filter by occasion (date night, chill hangout, family dinner)
+* Location based restaurant discovery
+* Filter by cuisine (sushi, burgers, vegan, etc)
+* Filter by occasion (date night, chill hangout, family dinner, etc)
 * AI-powered suggestions based on reviews and ratings
-* Save and favorite your go-to places
+* Save and favorite your go to places
 * Simple and clean interface for easy browsing
 
 ---
