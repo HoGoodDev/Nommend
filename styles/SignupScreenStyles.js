@@ -27,7 +27,7 @@ export default StyleSheet.create({
   },
 
   title: {
-    fontSize: 36, // App Title / Logo
+    fontSize: 36,
     fontFamily: "Poppins-Bold",
     color: "#6E3C25",
     marginBottom: 15,
@@ -36,7 +36,7 @@ export default StyleSheet.create({
   },
 
   label: {
-    fontSize: 24, // Section Headings
+    fontSize: 24,
     fontFamily: "Poppins-SemiBold",
     color: "#6E3C25",
     marginBottom: 8,
@@ -58,7 +58,7 @@ export default StyleSheet.create({
   input: {
     paddingVertical: 16,
     paddingHorizontal: 20,
-    fontSize: 18, // Body Paragraphs
+    fontSize: 18,
     color: "#2D2D2D",
     fontFamily: "Inter-Regular",
   },
@@ -78,7 +78,7 @@ export default StyleSheet.create({
 
   buttonText: {
     color: "#fff",
-    fontSize: 17, // Button Text
+    fontSize: 17,
     fontFamily: "Inter-SemiBold",
     letterSpacing: 1,
     textTransform: "uppercase",
@@ -91,14 +91,14 @@ export default StyleSheet.create({
   },
 
   loginText: {
-    fontSize: 17, // Body Paragraphs
+    fontSize: 17,
     color: "#2D2D2D",
     fontFamily: "Inter-Regular",
   },
 
   loginLink: {
     color: "#F28322",
-    fontFamily: "PlusJakartaSans-Medium", // Filters / Tags
+    fontFamily: "PlusJakartaSans-Medium",
     fontSize: 18,
     fontWeight: "bold",
   },
