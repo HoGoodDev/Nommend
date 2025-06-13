@@ -3,106 +3,99 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#F7E7CE",
     justifyContent: "flex-end",
-    alignItems: "center",
-    backgroundColor: "#F7E7CE", // Creamy Beige
+    alignItems: "stretch",
+    position: "relative",
+    paddingHorizontal: 0,
   },
+
   formContainer: {
-    backgroundColor: "#fff",
+    width: "100%",
+    backgroundColor: "#F7E7CE",
     borderTopLeftRadius: 36,
     borderTopRightRadius: 36,
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0,
     paddingVertical: 40,
     paddingHorizontal: 28,
-    width: "100%",
-    maxWidth: 420,
-    minHeight: 520,
-    alignSelf: "center",
     shadowColor: "#000",
-    shadowOffset: { width: 0, height: -8 },
+    shadowOffset: { width: 0, height: 6 },
     shadowOpacity: 0.12,
-    shadowRadius: 18,
+    shadowRadius: 20,
     elevation: 12,
-    marginTop: 0,
-    marginBottom: 0,
   },
+
   title: {
-    fontSize: 36,
+    fontSize: 30,
     fontWeight: "bold",
-    marginBottom: 40,
+    color: "#6E3C25", // Deep Espresso Brown
+    marginBottom: 30,
     textAlign: "center",
-    color: "#6E3C25", // Deep Espresso Brown
-    letterSpacing: 1.2,
+    letterSpacing: 1.5,
   },
+
   label: {
-    fontSize: 15,
-    color: "#6E3C25", // Deep Espresso Brown
-    marginBottom: 6,
+    fontSize: 16,
+    fontWeight: "600",
+    color: "#6E3C25",
+    marginBottom: 8,
     marginLeft: 2,
-    fontWeight: "500",
-    letterSpacing: 0.2,
   },
-  input: {
-    borderWidth: 0,
+
+  inputWrapper: {
     borderRadius: 25,
-    padding: 16,
-    marginBottom: 20,
-    fontSize: 17,
-    backgroundColor: "#F7E7CE", // Creamy Beige
-    color: "#2D2D2D", // Charcoal Gray
+    backgroundColor: "#fff",
     shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.06,
-    shadowRadius: 4,
-    elevation: 2,
-  },
-  button: {
-    backgroundColor: "#E63946",
-    paddingVertical: 12,
-    paddingHorizontal: 40,
-    borderRadius: 25,
-    marginTop: 30,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.2,
-    shadowRadius: 5,
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.15,
+    shadowRadius: 8,
     elevation: 5,
-    minWidth: 250,
-    alignItems: "center",
+    overflow: "hidden",
+    marginBottom: 25,
   },
+
+  input: {
+    paddingVertical: 16,
+    paddingHorizontal: 20,
+    fontSize: 18,
+    color: "#2D2D2D", // Charcoal Gray
+  },
+
+  button: {
+    backgroundColor: "#E63946", // Warm Red
+    paddingVertical: 16,
+    borderRadius: 25,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.25,
+    shadowRadius: 12,
+    elevation: 10,
+    marginTop: 15,
+  },
+
   buttonText: {
     color: "#fff",
-    fontWeight: "bold",
+    fontWeight: "700",
     fontSize: 20,
-    letterSpacing: 0.8,
+    letterSpacing: 1,
     textTransform: "uppercase",
   },
-  secondaryButton: {
-    backgroundColor: "#F28322", // Rich Orange
-    paddingVertical: 14,
-    borderRadius: 16,
+
+  loginContainer: {
+    marginTop: 30,
+    minWidth: 280,
     alignItems: "center",
-    marginTop: 18,
   },
-  secondaryButtonText: {
-    color: "#fff",
-    fontWeight: "bold",
-    fontSize: 18,
-    letterSpacing: 0.5,
-  },
-  accent: {
-    color: "#FFC857", // Golden Mustard
-  },
-  divider: {
-    height: 2,
-    backgroundColor: "#F7E7CE", // Creamy Beige
-    marginVertical: 18,
-    borderRadius: 2,
-    width: "30%",
-    alignSelf: "center",
-    opacity: 0.7,
-  },
-  bodyText: {
-    color: "#2D2D2D", // Charcoal Gray
+
+  loginText: {
     fontSize: 16,
+    color: "#2D2D2D",
+  },
+
+  loginLink: {
+    color: "#F28322",
+    fontWeight: "600",
   },
 });

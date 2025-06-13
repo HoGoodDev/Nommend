@@ -7,16 +7,21 @@ import {
   Alert,
   ImageBackground,
   Animated,
+  KeyboardAvoidingView,
+  Platform,
+  Easing,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import styles from "../styles/SignupScreenStyles";
 
 export default function SignupScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // Animation values
+  const navigation = useNavigation();
+
   const fadeAnim = useRef(new Animated.Value(0)).current;
-  const slideAnim = useRef(new Animated.Value(40)).current;
+  const slideAnim = useRef(new Animated.Value(250)).current;
 
   useEffect(() => {
     Animated.parallel([
@@ -24,11 +29,13 @@ export default function SignupScreen() {
         toValue: 1,
         duration: 700,
         useNativeDriver: true,
+        easing: Easing.out(Easing.exp),
       }),
       Animated.timing(slideAnim, {
         toValue: 0,
         duration: 700,
         useNativeDriver: true,
+        easing: Easing.out(Easing.exp),
       }),
     ]).start();
   }, []);
@@ -43,42 +50,63 @@ export default function SignupScreen() {
       style={styles.container}
       resizeMode="cover"
     >
-      <Animated.View
-        style={[
-          styles.formContainer,
-          {
-            opacity: fadeAnim,
-            transform: [{ translateY: slideAnim }],
-          },
-        ]}
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        style={{ flex: 1, justifyContent: "flex-end" }}
       >
-        <Text style={styles.title}>Sign Up</Text>
+        <Animated.View
+          style={[
+            styles.formContainer,
+            {
+              opacity: fadeAnim,
+              transform: [{ translateY: slideAnim }],
+            },
+          ]}
+        >
+          <Text style={styles.title}>Create your account</Text>
 
-        <Text style={styles.label}>Email</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="weloveFood@gmail.com"
-          value={email}
-          onChangeText={setEmail}
-          autoCapitalize="none"
-          keyboardType="email-address"
-          placeholderTextColor="#bdbdbd"
-        />
+          <Text style={styles.label}>Email</Text>
+          <View style={styles.inputWrapper}>
+            <TextInput
+              style={styles.input}
+              placeholder="you@example.com"
+              value={email}
+              onChangeText={setEmail}
+              autoCapitalize="none"
+              keyboardType="email-address"
+              placeholderTextColor="#bdbdbd"
+            />
+          </View>
 
-        <Text style={styles.label}>Password</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="********"
-          value={password}
-          onChangeText={setPassword}
-          secureTextEntry
-          placeholderTextColor="#bdbdbd"
-        />
+          <Text style={styles.label}>Password</Text>
+          <View style={styles.inputWrapper}>
+            <TextInput
+              style={styles.input}
+              placeholder="Create a password"
+              value={password}
+              onChangeText={setPassword}
+              secureTextEntry
+              placeholderTextColor="#bdbdbd"
+            />
+          </View>
 
-        <TouchableOpacity style={styles.button} onPress={handleSignup}>
-          <Text style={styles.buttonText}>Sign Up</Text>
-        </TouchableOpacity>
-      </Animated.View>
+          <TouchableOpacity style={styles.button} onPress={handleSignup}>
+            <Text style={styles.buttonText}>Sign Up</Text>
+          </TouchableOpacity>
+
+          <View style={styles.loginContainer}>
+            <Text style={styles.loginText}>
+              Back for seconds?{" "}
+              <Text
+                style={styles.loginLink}
+                onPress={() => navigation.navigate("Login")}
+              >
+                Login
+              </Text>
+            </Text>
+          </View>
+        </Animated.View>
+      </KeyboardAvoidingView>
     </ImageBackground>
   );
 }
