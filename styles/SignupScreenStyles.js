@@ -27,17 +27,17 @@ export default StyleSheet.create({
   },
 
   title: {
-    fontSize: 30,
-    fontWeight: "bold",
-    color: "#6E3C25", // Deep Espresso Brown
-    marginBottom: 30,
+    fontSize: 36, // App Title / Logo
+    fontFamily: "Poppins-Bold",
+    color: "#6E3C25",
+    marginBottom: 15,
     textAlign: "center",
     letterSpacing: 1.5,
   },
 
   label: {
-    fontSize: 16,
-    fontWeight: "600",
+    fontSize: 24, // Section Headings
+    fontFamily: "Poppins-SemiBold",
     color: "#6E3C25",
     marginBottom: 8,
     marginLeft: 2,
@@ -58,12 +58,13 @@ export default StyleSheet.create({
   input: {
     paddingVertical: 16,
     paddingHorizontal: 20,
-    fontSize: 18,
-    color: "#2D2D2D", // Charcoal Gray
+    fontSize: 18, // Body Paragraphs
+    color: "#2D2D2D",
+    fontFamily: "Inter-Regular",
   },
 
   button: {
-    backgroundColor: "#E63946", // Warm Red
+    backgroundColor: "#E63946",
     paddingVertical: 16,
     borderRadius: 25,
     alignItems: "center",
@@ -77,8 +78,8 @@ export default StyleSheet.create({
 
   buttonText: {
     color: "#fff",
-    fontWeight: "700",
-    fontSize: 20,
+    fontSize: 17, // Button Text
+    fontFamily: "Inter-SemiBold",
     letterSpacing: 1,
     textTransform: "uppercase",
   },
@@ -90,12 +91,15 @@ export default StyleSheet.create({
   },
 
   loginText: {
-    fontSize: 16,
+    fontSize: 17, // Body Paragraphs
     color: "#2D2D2D",
+    fontFamily: "Inter-Regular",
   },
 
   loginLink: {
     color: "#F28322",
-    fontWeight: "600",
+    fontFamily: "PlusJakartaSans-Medium", // Filters / Tags
+    fontSize: 18,
+    fontWeight: "bold",
   },
 });

@@ -11,7 +11,7 @@ export default StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: "#F7E7CE", // Creamy Beige
+    backgroundColor: "#F7E7CE",
     justifyContent: "center",
     alignItems: "center",
   },
@@ -34,16 +34,15 @@ export default StyleSheet.create({
     backgroundColor: "#F28322",
   },
   title1: {
-    fontSize: 36,
-    fontWeight: "bold",
+    fontSize: 36, // App Title / Logo
+    fontFamily: "Poppins-Bold",
     color: "#6E3C25",
-
     textAlign: "center",
   },
 
   title: {
-    fontSize: 60,
-    fontWeight: "bold",
+    fontSize: 48, // App Title / Logo (larger)
+    fontFamily: "Poppins-Bold",
     color: "#6E3C25",
     marginBottom: 100,
     textAlign: "center",
@@ -51,12 +50,13 @@ export default StyleSheet.create({
   },
 
   period: {
-    color: "#FFC857", // Golden Mustard
+    color: "#FFC857",
   },
 
   slogan: {
-    fontSize: 24,
-    color: "#2D2D2D", // Charcoal Gray
+    fontSize: 24, // Section Headings
+    fontFamily: "Poppins-SemiBold",
+    color: "#2D2D2D",
     marginTop: 10,
     textAlign: "center",
   },
@@ -78,8 +78,8 @@ export default StyleSheet.create({
 
   loginButtonText: {
     color: "#fff",
-    fontSize: 18,
-    fontWeight: "600",
+    fontSize: 16, // Button Text
+    fontFamily: "Inter-SemiBold",
   },
 
   signupContainer: {
@@ -89,12 +89,14 @@ export default StyleSheet.create({
   },
 
   signupText: {
-    fontSize: 16,
+    fontSize: 16, // Body Paragraphs
     color: "#2D2D2D",
+    fontFamily: "Inter-Regular",
   },
 
   signupLink: {
     color: "#F28322",
-    fontWeight: "600",
+    fontFamily: "PlusJakartaSans-Medium", // Filters / Tags
+    fontSize: 14,
   },
 });
