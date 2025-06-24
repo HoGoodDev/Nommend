@@ -5,7 +5,6 @@ import {
   TextInput,
   TouchableOpacity,
   Alert,
-  ImageBackground,
   Animated,
   KeyboardAvoidingView,
   Platform,
@@ -45,68 +44,66 @@ export default function SignupScreen() {
   };
 
   return (
-    <ImageBackground
-      source={require("../assets/signupbg.jpg")}
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
       style={styles.container}
-      resizeMode="cover"
     >
-      <KeyboardAvoidingView
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
-        style={{ flex: 1, justifyContent: "flex-end" }}
+      {/* Background circle */}
+      <View style={styles.bigCircleRight} />
+
+      {/* Animated content */}
+      <Animated.View
+        style={[
+          styles.contentWrapper,
+          {
+            opacity: fadeAnim,
+            transform: [{ translateY: slideAnim }],
+          },
+        ]}
       >
-        <Animated.View
-          style={[
-            styles.formContainer,
-            {
-              opacity: fadeAnim,
-              transform: [{ translateY: slideAnim }],
-            },
-          ]}
-        >
-          <Text style={styles.title}>Create your account</Text>
+        <Text style={styles.title}>Create your account</Text>
 
-          <Text style={styles.label}>Email</Text>
-          <View style={styles.inputWrapper}>
-            <TextInput
-              style={styles.input}
-              placeholder="you@example.com"
-              value={email}
-              onChangeText={setEmail}
-              autoCapitalize="none"
-              keyboardType="email-address"
-              placeholderTextColor="#bdbdbd"
-            />
-          </View>
+        <Text style={styles.label}>Email</Text>
+        <View style={styles.inputWrapper}>
+          <TextInput
+            style={styles.input}
+            placeholder="you@example.com"
+            value={email}
+            onChangeText={setEmail}
+            autoCapitalize="none"
+            keyboardType="email-address"
+            placeholderTextColor="#bdbdbd"
+          />
+        </View>
 
-          <Text style={styles.label}>Password</Text>
-          <View style={styles.inputWrapper}>
-            <TextInput
-              style={styles.input}
-              placeholder="Create a password"
-              value={password}
-              onChangeText={setPassword}
-              secureTextEntry
-              placeholderTextColor="#bdbdbd"
-            />
-          </View>
+        <Text style={styles.label}>Password</Text>
+        <View style={styles.inputWrapper}>
+          <TextInput
+            style={styles.input}
+            placeholder="Create a password"
+            value={password}
+            onChangeText={setPassword}
+            secureTextEntry
+            placeholderTextColor="#bdbdbd"
+          />
+        </View>
 
-          <TouchableOpacity style={styles.button} onPress={handleSignup}>
-            <Text style={styles.buttonText}>Sign Up</Text>
-          </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={handleSignup}>
+          <Text style={styles.buttonText}>Sign Up</Text>
+        </TouchableOpacity>
 
-          <View style={styles.loginContainer}>
-            <Text style={styles.loginText}>
-              Back for seconds?{" "}
-              <Text
-                style={styles.loginLink}
-                onPress={() => navigation.navigate("Login")}
-              >
-                Login
-              </Text>
+        <View style={styles.loginContainer}>
+          <Text style={styles.loginText}>
+            Back for seconds?{" "}
+            <Text
+              style={styles.loginLink}
+              onPress={() => navigation.navigate("Login")}
+            >
+              Login
             </Text>
-          </View>
-        </Animated.View>
-      </KeyboardAvoidingView>
-    </ImageBackground>
+          </Text>
+        </View>
+      </Animated.View>
+    </KeyboardAvoidingView>
   );
 }

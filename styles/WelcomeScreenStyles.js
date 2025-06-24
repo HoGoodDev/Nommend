@@ -11,10 +11,11 @@ export default StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: "#F7E7CE",
+    backgroundColor: "#f9fbfa", // Seasalt
     justifyContent: "center",
     alignItems: "center",
   },
+
   circleTopLeft: {
     position: "absolute",
     top: -250,
@@ -22,8 +23,9 @@ export default StyleSheet.create({
     width: 400,
     height: 400,
     borderRadius: 200,
-    backgroundColor: "#FFC857",
+    backgroundColor: "#f7fddd", // Light Yellow
   },
+
   circleBottomRight: {
     position: "absolute",
     bottom: -150,
@@ -31,38 +33,39 @@ export default StyleSheet.create({
     width: 300,
     height: 300,
     borderRadius: 150,
-    backgroundColor: "#F28322",
+    backgroundColor: "#e16851", // Burnt Sienna
   },
+
   title1: {
     fontSize: 36,
     fontFamily: "Poppins-Bold",
-    color: "#6E3C25",
+    color: "#6a6341", // Field Drab
     textAlign: "center",
   },
 
   title: {
     fontSize: 48,
     fontFamily: "Poppins-Bold",
-    color: "#6E3C25",
+    color: "#6a6341", // Field Drab
     marginBottom: 100,
     textAlign: "center",
     letterSpacing: 2,
   },
 
   period: {
-    color: "#FFC857",
+    color: "#fb686e", // Light Red
   },
 
   slogan: {
     fontSize: 24,
     fontFamily: "Poppins-SemiBold",
-    color: "#2D2D2D",
+    color: "#6a6341", // Field Drab
     marginTop: 10,
     textAlign: "center",
   },
 
   loginButton: {
-    backgroundColor: "#E63946",
+    backgroundColor: "#fb686e", // Light Red
     paddingVertical: 12,
     paddingHorizontal: 40,
     borderRadius: 25,
@@ -77,7 +80,7 @@ export default StyleSheet.create({
   },
 
   loginButtonText: {
-    color: "#fff",
+    color: "#fefefe", // White
     fontSize: 16,
     fontFamily: "Inter-SemiBold",
   },
@@ -90,12 +93,12 @@ export default StyleSheet.create({
 
   signupText: {
     fontSize: 16,
-    color: "#2D2D2D",
+    color: "#6a6341", // Field Drab
     fontFamily: "Inter-Regular",
   },
 
   signupLink: {
-    color: "#F28322",
+    color: "#e16851", // Burnt Sienna
     fontFamily: "PlusJakartaSans-Medium",
     fontSize: 14,
   },
