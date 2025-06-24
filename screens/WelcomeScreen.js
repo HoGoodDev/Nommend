@@ -109,7 +109,11 @@ export default function WelcomeScreen() {
 
         <Animated.View style={animatedStyle(buttonAnim)}>
           <TouchableOpacity style={styles.loginButton} activeOpacity={0.7}>
-            <Text style={styles.loginButtonText}>Log In</Text>
+            <Text style={styles.loginButtonText}
+            onPress={() => navigation.navigate("Login")}
+            >
+              
+              Log In</Text>
           </TouchableOpacity>
         </Animated.View>
 

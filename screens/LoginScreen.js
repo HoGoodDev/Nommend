@@ -1,56 +1,136 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import React, { useState, useRef, useEffect } from "react";
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  Alert,
+  Animated,
+  KeyboardAvoidingView,
+  Platform,
+  Easing,
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import styles from "../styles/LoginScreenStyles";
 
-const LoginScreen = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+export default function LoginScreen() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-    const handleLogin = () => {
-        // Handle login logic here
-        console.log('Logging in with:', email, password);
-    };
+  const navigation = useNavigation();
 
-    return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Login</Text>
-            <TextInput
-                style={styles.input}
-                placeholder="Email"
-                value={email}
-                onChangeText={setEmail}
-                keyboardType="email-address"
-                autoCapitalize="none"
-            />
-            <TextInput
-                style={styles.input}
-                placeholder="Password"
-                value={password}
-                onChangeText={setPassword}
-                secureTextEntry
-            />
-            <Button title="Login" onPress={handleLogin} />
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const slideAnim = useRef(new Animated.Value(250)).current;
+  const pulseBottomLeftCircle = useRef(new Animated.Value(1)).current;
+
+  useEffect(() => {
+    Animated.parallel([
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 700,
+        useNativeDriver: true,
+        easing: Easing.out(Easing.exp),
+      }),
+      Animated.timing(slideAnim, {
+        toValue: 0,
+        duration: 700,
+        useNativeDriver: true,
+        easing: Easing.out(Easing.exp),
+      }),
+    ]).start();
+
+    Animated.sequence([
+      Animated.timing(pulseBottomLeftCircle, {
+        toValue: 1.15,
+        duration: 400,
+        easing: Easing.out(Easing.ease),
+        useNativeDriver: true,
+      }),
+      Animated.timing(pulseBottomLeftCircle, {
+        toValue: 1,
+        duration: 800,
+        easing: Easing.in(Easing.ease),
+        useNativeDriver: true,
+      }),
+    ]).start();
+  }, []);
+
+  const handleLogin = () => {
+    Alert.alert("Login Info", `Email: ${email}\nPassword: ${password}`);
+  };
+
+  return (
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={styles.container}
+    >
+    <Animated.View
+  style={[
+    styles.bigCircleBottomLeft,
+    {
+      transform: [
+        { translateX: -150 }, // shift center left
+        { translateY: 150 },  // shift center up
+        { scale: pulseBottomLeftCircle },
+        { translateX: 150 },  // restore
+        { translateY: -150 }, // restore
+      ],
+    },
+  ]}
+/>
+
+      <Animated.View
+        style={[
+          styles.contentWrapper,
+          {
+            opacity: fadeAnim,
+            transform: [{ translateY: slideAnim }],
+          },
+        ]}
+      >
+        <Text style={styles.title}>Welcome back</Text>
+
+        <Text style={styles.label}>Email</Text>
+        <View style={styles.inputWrapper}>
+          <TextInput
+            style={styles.input}
+            placeholder="you@example.com"
+            value={email}
+            onChangeText={setEmail}
+            autoCapitalize="none"
+            keyboardType="email-address"
+            placeholderTextColor="#bdbdbd"
+          />
         </View>
-    );
-};
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        padding: 16,
-    },
-    title: {
-        fontSize: 24,
-        marginBottom: 24,
-        textAlign: 'center',
-    },
-    input: {
-        height: 40,
-        borderColor: 'gray',
-        borderWidth: 1,
-        marginBottom: 12,
-        paddingHorizontal: 8,
-    },
-});
+        <Text style={styles.label}>Password</Text>
+        <View style={styles.inputWrapper}>
+          <TextInput
+            style={styles.input}
+            placeholder="Enter your password"
+            value={password}
+            onChangeText={setPassword}
+            secureTextEntry
+            placeholderTextColor="#bdbdbd"
+          />
+        </View>
 
-export default LoginScreen;
+        <TouchableOpacity style={styles.button} onPress={handleLogin}>
+          <Text style={styles.buttonText}>Login</Text>
+        </TouchableOpacity>
+
+        <View style={styles.loginContainer}>
+          <Text style={styles.loginText}>
+            New here?{" "}
+            <Text
+              style={styles.loginLink}
+              onPress={() => navigation.navigate("Signup")}
+            >
+              Create an account
+            </Text>
+          </Text>
+        </View>
+      </Animated.View>
+    </KeyboardAvoidingView>
+  );
+}
