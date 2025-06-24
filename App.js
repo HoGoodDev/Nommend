@@ -7,6 +7,7 @@ import { useState } from "react";
 
 import WelcomeScreen from "./screens/WelcomeScreen.js";
 import SignupScreen from "./screens/SignupScreen.js";
+import LoginScreen from "./screens/LoginScreen.js";
 
 const Stack = createNativeStackNavigator();
 
@@ -36,6 +37,7 @@ export default function App() {
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="Signup" component={SignupScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
