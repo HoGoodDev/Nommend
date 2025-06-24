@@ -21,8 +21,10 @@ export default function SignupScreen() {
 
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const slideAnim = useRef(new Animated.Value(250)).current;
+  const pulseRightCircle = useRef(new Animated.Value(1)).current;
 
   useEffect(() => {
+    // Form fade/slide animation
     Animated.parallel([
       Animated.timing(fadeAnim, {
         toValue: 1,
@@ -37,6 +39,22 @@ export default function SignupScreen() {
         easing: Easing.out(Easing.exp),
       }),
     ]).start();
+
+    // One-time pulse animation for circle
+    Animated.sequence([
+      Animated.timing(pulseRightCircle, {
+        toValue: 1.15,
+        duration: 400,
+        easing: Easing.out(Easing.ease),
+        useNativeDriver: true,
+      }),
+      Animated.timing(pulseRightCircle, {
+        toValue: 1,
+        duration: 800,
+        easing: Easing.in(Easing.ease),
+        useNativeDriver: true,
+      }),
+    ]).start();
   }, []);
 
   const handleSignup = () => {
@@ -48,8 +66,13 @@ export default function SignupScreen() {
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       style={styles.container}
     >
-      {/* Background circle */}
-      <View style={styles.bigCircleRight} />
+      {/* One-time animated background circle */}
+      <Animated.View
+        style={[
+          styles.bigCircleRight,
+          { transform: [{ scale: pulseRightCircle }] },
+        ]}
+      />
 
       {/* Animated content */}
       <Animated.View

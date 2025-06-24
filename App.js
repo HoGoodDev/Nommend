@@ -18,12 +18,11 @@ export default function App() {
       <AppLoading
         startAsync={() =>
           Font.loadAsync({
-            "Poppins-Bold": require("./assets/fonts/Poppins/Poppins-Bold.ttf"),
-            "Poppins-SemiBold": require("./assets/fonts/Poppins/Poppins-SemiBold.ttf"),
-            "Poppins-Regular": require("./assets/fonts/Poppins/Poppins-Regular.ttf"),
-            "Inter-Regular": require("./assets/fonts/Inter/static/Inter_18pt-Regular.ttf"),
-            "Inter-SemiBold": require("./assets/fonts/Inter/static/Inter_18pt-SemiBold.ttf"),
-            "PlusJakartaSans-Medium": require("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Medium.ttf"),
+            "League_Spartan": require("./assets/fonts/League_Spartan/static/LeagueSpartan-Bold.ttf"),
+           "Quicksand": require("./assets/fonts/Quicksand/static/Quicksand-SemiBold.ttf"),
+           "Nunito": require("./assets/fonts/Nunito/static/Nunito-Regular.ttf"),
+           "Poppins": require("./assets/fonts/Poppins/Poppins-Medium.ttf"),
+           "Raleway": require("./assets/fonts/Raleway/static/Raleway-LightItalic.ttf"),
           })
         }
         onFinish={() => setFontsLoaded(true)}

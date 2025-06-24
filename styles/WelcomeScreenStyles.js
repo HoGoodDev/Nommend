@@ -20,8 +20,8 @@ export default StyleSheet.create({
     position: "absolute",
     top: -250,
     left: -250,
-    width: 400,
-    height: 400,
+    width: 500,
+    height: 500,
     borderRadius: 200,
     backgroundColor: "#f7fddd", // Light Yellow
   },
@@ -30,36 +30,32 @@ export default StyleSheet.create({
     position: "absolute",
     bottom: -150,
     right: -150,
-    width: 300,
-    height: 300,
-    borderRadius: 150,
+    width: 400,
+    height: 400,
+    borderRadius: 200,
     backgroundColor: "#e16851", // Burnt Sienna
-  },
-
-  title1: {
-    fontSize: 36,
-    fontFamily: "Poppins-Bold",
-    color: "#6a6341", // Field Drab
-    textAlign: "center",
   },
 
   title: {
     fontSize: 48,
-    fontFamily: "Poppins-Bold",
+    fontFamily: "League_Spartan", // App Name
     color: "#6a6341", // Field Drab
     marginBottom: 100,
     textAlign: "center",
     letterSpacing: 2,
   },
 
-  period: {
-    color: "#fb686e", // Light Red
+  title1: {
+    fontSize: 36,
+    fontFamily: "League_Spartan", // App Name
+    color: "#6a6341",
+    textAlign: "center",
   },
 
   slogan: {
     fontSize: 24,
-    fontFamily: "Poppins-SemiBold",
-    color: "#6a6341", // Field Drab
+    fontFamily: "Quicksand", // Section Titles
+    color: "#6a6341",
     marginTop: 10,
     textAlign: "center",
   },
@@ -82,7 +78,7 @@ export default StyleSheet.create({
   loginButtonText: {
     color: "#fefefe", // White
     fontSize: 16,
-    fontFamily: "Inter-SemiBold",
+    fontFamily: "Poppins", // Buttons
   },
 
   signupContainer: {
@@ -93,13 +89,17 @@ export default StyleSheet.create({
 
   signupText: {
     fontSize: 16,
-    color: "#6a6341", // Field Drab
-    fontFamily: "Inter-Regular",
+    color: "#6a6341",
+    fontFamily: "Nunito", // Body text
   },
 
   signupLink: {
     color: "#e16851", // Burnt Sienna
-    fontFamily: "PlusJakartaSans-Medium",
+    fontFamily: "Raleway", // Captions
     fontSize: 14,
+  },
+
+  period: {
+    color: "#fb686e",
   },
 });

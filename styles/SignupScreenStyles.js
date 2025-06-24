@@ -3,8 +3,8 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",     // center vertically
-    alignItems: "center",         // center horizontally
+    justifyContent: "center",
+    alignItems: "center",
     position: "relative",
     paddingHorizontal: 28,
   },
@@ -17,24 +17,24 @@ export default StyleSheet.create({
 
   title: {
     fontSize: 36,
-    fontFamily: "Poppins-Bold",
-    color: "#6a6341", // Field Drab (Main Text)
-    marginBottom: 15,
+    fontFamily: "League_Spartan", // App Name
+    color: "#6a6341",
+    marginBottom: 20,
     textAlign: "center",
     letterSpacing: 1.5,
   },
 
   label: {
     fontSize: 24,
-    fontFamily: "Poppins-SemiBold",
-    color: "#6a6341", // Field Drab
+    fontFamily: "Quicksand", // Section Titles
+    color: "#6a6341",
     marginBottom: 8,
     marginLeft: 2,
   },
 
   inputWrapper: {
     borderRadius: 25,
-    backgroundColor: "#fefefe", // Default Base
+    backgroundColor: "#fefefe",
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.15,
@@ -48,12 +48,12 @@ export default StyleSheet.create({
     paddingVertical: 16,
     paddingHorizontal: 20,
     fontSize: 18,
-    color: "#6a6341", // Field Drab
-    fontFamily: "Inter-Regular",
+    color: "#6a6341",
+    fontFamily: "Nunito", // Body text
   },
 
   button: {
-    backgroundColor: "#fb686e", // Primary Accent
+    backgroundColor: "#fb686e",
     paddingVertical: 16,
     borderRadius: 25,
     alignItems: "center",
@@ -66,9 +66,9 @@ export default StyleSheet.create({
   },
 
   buttonText: {
-    color: "#fefefe", // White
+    color: "#fefefe",
     fontSize: 17,
-    fontFamily: "Inter-SemiBold",
+    fontFamily: "Poppins", // Buttons
     letterSpacing: 1,
     textTransform: "uppercase",
   },
@@ -81,15 +81,15 @@ export default StyleSheet.create({
 
   loginText: {
     fontSize: 17,
-    color: "#6a6341", // Field Drab
-    fontFamily: "Inter-Regular",
+    color: "#6a6341",
+    fontFamily: "Nunito", // Body text
   },
 
   loginLink: {
-    color: "#e16851", // Burnt Sienna (Secondary Accent)
-    fontFamily: "PlusJakartaSans-Medium",
+    color: "#e16851",
+    fontFamily: "Raleway", // Captions
     fontSize: 18,
-    fontWeight: "bold",
+    fontStyle: "italic",
   },
 
   bigCircleRight: {
@@ -98,8 +98,8 @@ export default StyleSheet.create({
     right: -300,
     width: 780,
     height: 1050,
-    borderRadius: 350,
-    backgroundColor: "#f7fddd", // Light Yellow for Highlight Area
+    borderRadius: 400,
+    backgroundColor: "#f7fddd",
     zIndex: -1,
   },
 });
