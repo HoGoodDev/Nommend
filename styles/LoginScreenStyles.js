@@ -99,7 +99,7 @@ export default StyleSheet.create({
     left: -300,
   
     width: 780,
-    height: 1050,
+    height: 1100,
     borderRadius: 400,
     backgroundColor: "#f7fddd",
     zIndex: -1,

@@ -42,7 +42,7 @@ export default function LoginScreen() {
     Animated.sequence([
       Animated.timing(pulseBottomLeftCircle, {
         toValue: 1.15,
-        duration: 400,
+        duration: 100,
         easing: Easing.out(Easing.ease),
         useNativeDriver: true,
       }),

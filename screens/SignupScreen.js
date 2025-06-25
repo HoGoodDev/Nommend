@@ -44,7 +44,7 @@ export default function SignupScreen() {
     Animated.sequence([
       Animated.timing(pulseRightCircle, {
         toValue: 1.15,
-        duration: 400,
+        duration: 100,
         easing: Easing.out(Easing.ease),
         useNativeDriver: true,
       }),
@@ -85,6 +85,17 @@ export default function SignupScreen() {
         ]}
       >
         <Text style={styles.title}>Create your account</Text>
+<Text style={styles.label}>Your Name</Text>
+
+<View style={styles.inputWrapper}>
+<TextInput
+style={styles.input}
+placeholder="Enter your name"
+placeholderTextColor="#bdbdbd"
+    autoCapitalize="none"
+
+/>
+</View>
 
         <Text style={styles.label}>Email</Text>
         <View style={styles.inputWrapper}>
